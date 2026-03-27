@@ -1,3 +1,6 @@
+print("This is opening init.lua")
+require("config.lazy")
+
 --Global
 vim.g.mapleader = " "
 
