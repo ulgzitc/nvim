@@ -1,5 +1,6 @@
 --Global
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 
 --Configs
@@ -15,17 +16,21 @@ vim.o.smartcase = true
 vim.o.hlsearch = false
 vim.o.wrap = true
 vim.o.breakindent = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
 vim.o.expandtab = false
+vim.o.cursorline = true
+vim.o.scrolloff = 8
+
+
+
+
+
+
 
 
 --Keymap
 vim.keymap.set("n", "<space>w", "<cmd>write<cr>", { desc = "Save file" })
-vim.keymap.set({ "n", "x" }, "gy", '"+y', { desc = "Global YANK! - doesn't work yet" })
-vim.keymap.set({ "n", "x" }, "gp", '"+p', { desc = "Global pase!" })
-vim.keymap.set({ "n", "x" }, "gy", '"*y', { desc = "Global YANK! - doesn't work yet" })
-vim.keymap.set({ "n", "x" }, "gp", '"*p', { desc = "Global pase!" })
 vim.keymap.set({ "n", "x" }, "x", '"_x', { desc = "Don't let the char-delete touch the YANK!" })
 vim.keymap.set({ "n", "x" }, "x", '"_x', { desc = "Don't let the char-delete touch the YANK!" })
 vim.keymap.set({ "n", "x" }, "X", '"_d', { desc = "Don't let the char-delete touch the YANK!" })
