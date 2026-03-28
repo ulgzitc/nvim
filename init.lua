@@ -8,12 +8,6 @@ require("config.lazy")
 
 
 
---Language Server Protocol (LSP)
-vim.lsp.enable({'ty', 'lua_ls'})
-
-
-
-
 --Options
 vim.o.number = true
 vim.o.relativenumber = true
