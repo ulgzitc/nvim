@@ -2,9 +2,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
 --Configs
 require("config.lazy")
+
+--LSP
+require("lsp.init")
 
 
 
@@ -24,20 +26,9 @@ vim.o.cursorline = true
 vim.o.scrolloff = 8
 --vim.o.autocomplete = true
 
-
-
-
 --Keymap
-vim.keymap.set("n", "<space>n", "<cmd>nohlsearch<cr>", {desc = "Turns of highlighted search/text/word"})
+vim.keymap.set("n", "<space>n", "<cmd>nohlsearch<cr>", { desc = "Turns of highlighted search/text/word" })
 vim.keymap.set("n", "<space>w", "<cmd>write<cr>", { desc = "Save file" })
 vim.keymap.set({ "n", "x" }, "x", '"_x', { desc = "Don't let the char-delete touch the YANK!" })
 vim.keymap.set({ "n", "x" }, "x", '"_x', { desc = "Don't let the char-delete touch the YANK!" })
 vim.keymap.set({ "n", "x" }, "X", '"_d', { desc = "Don't let the char-delete touch the YANK!" })
-
-
-
-
-
-
-
-
