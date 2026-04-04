@@ -3,5 +3,6 @@ vim.keymap.set("n", "<space>w", "<cmd>write<cr>", { desc = "Save file" })
 vim.keymap.set({ "n", "x" }, "x", '"_x', { desc = "Don't let the char-delete touch the YANK!" })
 vim.keymap.set({ "n", "x" }, "x", '"_x', { desc = "Don't let the char-delete touch the YANK!" })
 vim.keymap.set({ "n", "x" }, "X", '"_d', { desc = "Don't let the char-delete touch the YANK!" })
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Stop highlighting when you press Esc" })
+vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down using Ctrl+j using usingsert more" })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up using Ctrl+j using usingsert more" })

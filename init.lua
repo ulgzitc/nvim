@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 
+
 --Options
 require("config.options")
 
@@ -17,8 +18,3 @@ require("config.lsp")
 
 --Scripts
 require("config.scripts")
-
-
-
-
-

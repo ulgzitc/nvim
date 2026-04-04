@@ -10,5 +10,5 @@ vim.o.expandtab = false
 vim.o.cursorline = true
 vim.o.scrolloff = 8
 vim.o.undofile = true
-vim.o.completeopt = "menuone,noselect,popup,noinsert,menu"
+vim.o.completeopt = "menu,menuone,noselect,noinsert,popup,fuzzy"
 vim.schedule(function() vim.o.clipboard = "unnamedplus" end)
