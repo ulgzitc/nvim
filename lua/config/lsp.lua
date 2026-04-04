@@ -9,6 +9,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
 			client.server_capabilities.completionProvider.triggerCharacters = chars
 			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+			vim.keymap.set('i', '<Tab>', function()
+				return vim.fn.pumvisible() == 1 and '<C-n>' or '<Tab>'
+			end, { expr = true })
 		end
 		if not client:supports_method('textDocument/willSaveWaitUntil')
 				and client:supports_method('textDocument/formatting') then
