@@ -9,7 +9,7 @@ return {
 			"css-lsp",
 			"ruff",
 			"bash-language-server",
-			"tsserver",
+			--			"tsserver",
 			--			"yaml-language-server",
 			--				"ini_ls",
 		},

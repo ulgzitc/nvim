@@ -8,6 +8,7 @@ return {
 		{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 	},
 	config = function()
+		local actions = require "telescope.actions"
 		require('telescope').setup {
 			defaults = {
 				initial_mode = "normal",
@@ -19,7 +20,17 @@ return {
 				},
 				find_files = {
 					initial_mode = "insert",
-				}
+				},
+				buffers = {
+					mappings = {
+						i = {
+							["<C-d>"] = actions.delete_buffer + actions.move_to_top,
+						},
+						n = {
+							["<C-d>"] = actions.delete_buffer + actions.move_to_top,
+						},
+					}
+				},
 			}
 		}
 		local builtin = require 'telescope.builtin'

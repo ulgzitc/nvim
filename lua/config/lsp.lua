@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		if client:supports_method('textDocument/completion') then
 			local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
 			client.server_capabilities.completionProvider.triggerCharacters = chars
-			vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+			vim.lsp.completion.enable(false, client.id, ev.buf, { autotrigger = true })
 			vim.keymap.set('i', '<Tab>', function()
 				return vim.fn.pumvisible() == 1 and '<C-n>' or '<Tab>'
 			end, { expr = true })
