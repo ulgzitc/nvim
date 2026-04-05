@@ -6,3 +6,5 @@ vim.keymap.set({ "n", "x" }, "X", '"_d', { desc = "Don't let the char-delete tou
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Stop highlighting when you press Esc" })
 vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down using Ctrl+j using usingsert more" })
 vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up using Ctrl+j using usingsert more" })
+
+
