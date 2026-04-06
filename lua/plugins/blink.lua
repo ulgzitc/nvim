@@ -27,6 +27,9 @@ return {
 			['<C-k>'] = { 'select_prev', 'fallback' },
 			['<C-space>'] = { 'show', 'hide' },
 			['<C-cr>'] = { 'accept', 'fallback' },
+			['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+			['<C-p>'] = { 'show_signature', 'hide_signature', 'fallback' },
+			['<C-q>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
 			['<Tab>'] = {
 				function(cmp)
 					if cmp.snippet_active() then
@@ -38,9 +41,6 @@ return {
 				'snippet_forward',
 				'fallback'
 			},
-			['<S-Tab>'] = { 'snippet_backward', 'fallback' },
-			['<C-p>'] = { 'show_signature', 'hide_signature', 'fallback' },
-			['<C-q>'] = { 'show_documentation', 'hide_documentation', 'fallback' },
 		},
 
 		appearance = {

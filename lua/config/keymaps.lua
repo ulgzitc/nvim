@@ -10,3 +10,4 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Stop highlighting 
 vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down using Ctrl+j using usingsert more" })
 vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up using Ctrl+j using usingsert more" })
 vim.keymap.set({ 'n', 'x' }, '<C-a>', 'ggVG', { desc = "Selecting all (buffer)" })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "Esc to exit terminal mode" })
