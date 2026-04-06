@@ -25,16 +25,62 @@ return {
 					mappings = {
 						i = {
 							["<C-d>"] = actions.delete_buffer + actions.move_to_top,
+							["dd"] = actions.delete_buffer + actions.move_to_top,
+
 						},
 						n = {
 							["<C-d>"] = actions.delete_buffer + actions.move_to_top,
+							["dd"] = actions.delete_buffer + actions.move_to_top,
 						},
 					}
 				},
 			}
 		}
+
+		-- Harpoon
+		local harpoon = require('harpoon')
+		harpoon:setup({})
+		local conf = require("telescope.config").values
+		local function toggle_telescope(harpoon_files)
+			local file_paths = {}
+			for _, item in ipairs(harpoon_files.items) do
+				table.insert(file_paths, item.value)
+			end
+
+			local make_finder = function()
+				local paths = {}
+				for _, item in ipairs(harpoon_files.items) do
+					table.insert(paths, item.value)
+				end
+				return require("telescope.finders").new_table({
+					results = paths,
+				})
+			end
+
+			require("telescope.pickers").new({}, {
+				prompt_title = "Harpoon",
+				finder = require("telescope.finders").new_table({
+					results = file_paths,
+				}),
+				previewer = conf.file_previewer({}),
+				sorter = conf.generic_sorter({}),
+				attach_mappings = function(prompt_buffer_number, map)
+					map({ 'n', 'i' }, "<c-d>", function()
+						local state = require("telescope.actions.state")
+						local selected_entry = state.get_selected_entry()
+						local current_picker = state.get_current_picker(prompt_buffer_number)
+
+						harpoon:list():remove(selected_entry)
+						current_picker:refresh(make_finder())
+					end)
+
+					return true
+				end,
+			}):find()
+		end
+
+		--Key binds
 		local builtin = require 'telescope.builtin'
-		vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[F]ind [H]elp' })
 		vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = '[F]ind [K]eymaps' })
 		vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
 		vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = '[F]ind [S]elect Telescope' })
@@ -67,5 +113,7 @@ return {
 			{ desc = "Lists current changes per file with diff preview and add action. (Multi-selection still WIP)" })
 		vim.keymap.set('n', '<leader>t', builtin.treesitter,
 			{ desc = 'Lists Function names, variables, ... using treesitter locals queries' })
+		vim.keymap.set("n", "<leader>fh", function() toggle_telescope(harpoon:list()) end,
+			{ desc = "Open harpoon window | a.k.a [F]ind [H]arpoon" })
 	end,
 }
