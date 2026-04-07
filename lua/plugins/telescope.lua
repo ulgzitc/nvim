@@ -43,7 +43,7 @@ return {
 			group = save_group,
 			pattern = 'TelescopeFindPre',
 			callback = function()
-				vim.cmd('silent! write')
+				--vim.cmd('silent! write')
 			end
 		})
 
