@@ -1,5 +1,4 @@
-vim.keymap.set("n", "<space>n", "<cmd>nohlsearch<cr>", { desc = "Turns of highlighted search/text/word" })
-vim.keymap.set("n", "<space>w", "<cmd>silent! write<cr>", { desc = "Save file" })
+vim.keymap.set("n", "<leader>w", "<cmd>silent! write<cr>", { desc = "Save file" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Stop highlighting when you press Esc" })
 vim.keymap.set({ "n", "x" }, "x", '"_x', { desc = "Don't let the char-delete touch the YANK!" })
 vim.keymap.set({ "n", "x" }, "x", '"_x', { desc = "Don't let the char-delete touch the YANK!" })
@@ -11,3 +10,5 @@ vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down using Ctrl+j using us
 vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up using Ctrl+j using usingsert more" })
 vim.keymap.set({ 'n', 'x' }, '<C-a>', 'ggVG', { desc = "Selecting all (buffer)" })
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = "Esc to exit terminal mode" })
+vim.keymap.set('n', '<M-j>', '<cmd>cnext<cr>', { desc = 'Go to next line | Quickfix' })
+vim.keymap.set('n', '<M-k>', '<cmd>cprev<cr>', { desc = 'Go to previous line | Quickfix' })
