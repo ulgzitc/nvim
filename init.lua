@@ -2,10 +2,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
-
-
-
 --Options
 require("config.options")
 

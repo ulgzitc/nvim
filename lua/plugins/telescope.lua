@@ -37,6 +37,17 @@ return {
 			}
 		}
 
+		--Autosave when Telescope opens
+		local save_group = vim.api.nvim_create_augroup('Autosave', { clear = true })
+		vim.api.nvim_create_autocmd('User', {
+			group = save_group,
+			pattern = 'TelescopeFindPre',
+			callback = function()
+				vim.cmd('silent! write')
+			end
+		})
+
+
 		-- Harpoon
 		local harpoon = require('harpoon')
 		harpoon:setup({})
