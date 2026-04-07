@@ -7,7 +7,6 @@ return {
 		harpoon:setup()
 
 		vim.keymap.set("n", "<leader>ah", function() harpoon:list():add() end)
-		--		vim.keymap.set("n", "<leader>rh", function() harpoon:list():remove() end)
 		local harpoon_extensions = require("harpoon.extensions")
 		harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
 	end

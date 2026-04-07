@@ -3,7 +3,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(ev)
 		local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
 		if client:supports_method('textDocument/implementation') then
-			-- Create a keymap for vim.lsp.buf.implementation ...
+			-- Keymap for vim.lsp.buf.implementation | hollup, gotta learn
 		end
 		if client:supports_method('textDocument/completion') then
 			local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
